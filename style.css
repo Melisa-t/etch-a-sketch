@@ -1,0 +1,27 @@
+ * {
+    margin: 0;
+    padding: 0;
+ }
+ 
+ .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 30em;
+    width:30em;
+    border: black solid 1px;
+}
+
+.grid {
+    width: 20%;
+    height: 20%;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
