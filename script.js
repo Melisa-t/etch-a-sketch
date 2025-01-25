@@ -8,22 +8,23 @@ gridButton.addEventListener("click", () => setGrid())
 
 function setGrid () {
     cleanGrid()
-    console.log("hi")
-    let gridSize = prompt("Please choose grid size!")
+    
+    let gridSize = Number(prompt("Please choose grid size between 1-100!"))
+    if(!gridSize || gridSize > 100) {
+        return setGrid()
+    }
         for (let x = 0; x <gridSize; x++) {
-            for (let i= 0; i<gridSize; i++) { 
+            for (let i = 0; i<gridSize; i++) { 
                     const grid = document.createElement("div");
                     grid.classList.add("grid");
                     container.appendChild(grid);
                     grid.setAttribute("style", `width: ${(100/gridSize)}%; height: ${(100/gridSize)}%`);
                 
             }
-            }
-
-
-            
-
+            }   
 }
+
+
 
 
 function cleanGrid() {
@@ -36,6 +37,4 @@ function cleanGrid() {
     for(let y = 0; y < cleanGridList.length; y++) {
         cleanGridList[y].remove()
     } 
-
-
 }
