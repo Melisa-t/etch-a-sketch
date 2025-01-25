@@ -7,7 +7,6 @@ gridButton.addEventListener("click", () => setGrid());
 
 function changeColor(e) {
     e.preventDefault()
-    console.log(e)
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     e.target.style.background = `#${randomColor}`;
     e.target.style.opacity = "0.7"
@@ -40,11 +39,9 @@ function setGrid () {
 
 function cleanGrid() {
     const cleanGridList = document.querySelectorAll(".grid")
-    console.log(cleanGridList)
     if (!cleanGridList || cleanGridList.length <= 0 )  {
         return 
     } 
-    console.log(cleanGridList)
     for(let y = 0; y < cleanGridList.length; y++) {
         cleanGridList[y].remove()
     } 
