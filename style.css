@@ -10,7 +10,25 @@
     align-items: center;
     height: 30em;
     width:30em;
-    border: black solid 1px;
+    border: #E5D9F2 solid 1px;
+    background-color: white;
+}
+
+button {
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #E5D9F2;
+    background-color: #A294F9;
+    border: #E5D9F2 solid, 2px;
+}
+
+button:hover {
+    border: #A294F9 solid, 2px;
+    cursor: pointer;
+    color: #A294F9;
+    background-color: #E5D9F2;
+    transition-duration: 0.4s;
 }
 
 .grid {
@@ -24,4 +42,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #F5EFFF;
+}
+
+html {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+h1 {
+    color:#A294F9;
 }
