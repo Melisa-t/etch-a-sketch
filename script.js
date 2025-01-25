@@ -2,11 +2,23 @@ const container = document.querySelector(".container");
 const gridButton = document.querySelector(".grid-size-button")
 
 
-gridButton.addEventListener("click", () => setGrid())
+
+gridButton.addEventListener("click", () => setGrid());
+
+function changeColor(e) {
+    e.preventDefault()
+    console.log(e)
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    e.target.style.background = `#${randomColor}`;
+    e.target.style.opacity = "0.7"
+    e.target.style.transitionDuration = "0.4s";
+    
+}
 
 // dividing i by 100 gives the width and height % of the grids
 
 function setGrid () {
+    
     cleanGrid()
     
     let gridSize = Number(prompt("Please choose grid size between 1-100!"))
@@ -18,14 +30,13 @@ function setGrid () {
                     const grid = document.createElement("div");
                     grid.classList.add("grid");
                     container.appendChild(grid);
-                    grid.setAttribute("style", `width: ${(100/gridSize)}%; height: ${(100/gridSize)}%`);
-                
+                    grid.setAttribute("style", `width: ${(100/gridSize)}% !important; height: ${(100/gridSize)}% !important`);
+                    
+                    grid.addEventListener("mouseover", changeColor);
             }
             }   
+  
 }
-
-
-
 
 function cleanGrid() {
     const cleanGridList = document.querySelectorAll(".grid")
