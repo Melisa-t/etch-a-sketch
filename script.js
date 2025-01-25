@@ -2,8 +2,9 @@ const container = document.querySelector(".container");
 const gridButton = document.querySelector(".grid-size-button")
 
 
-
 gridButton.addEventListener("click", () => setGrid());
+
+// assigning random color to mouse
 
 function changeColor(e) {
     e.preventDefault()
@@ -15,6 +16,7 @@ function changeColor(e) {
 }
 
 // dividing i by 100 gives the width and height % of the grids
+// creating grids according to the prompt and applying hovering effect
 
 function setGrid () {
     
@@ -30,12 +32,13 @@ function setGrid () {
                     grid.classList.add("grid");
                     container.appendChild(grid);
                     grid.setAttribute("style", `width: ${(100/gridSize)}% !important; height: ${(100/gridSize)}% !important`);
-                    
                     grid.addEventListener("mouseover", changeColor);
             }
             }   
   
 }
+
+// function to reset the grid IF it is created already
 
 function cleanGrid() {
     const cleanGridList = document.querySelectorAll(".grid")
